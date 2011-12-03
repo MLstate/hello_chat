@@ -96,10 +96,10 @@ function start() {
  * embedding statically the contents of directory "resources", using the global stylesheet
  * "resources/css.css" and the user interface defined in [start].
  */
-Server.start(Server.http,
-  { title: "Chat"
-  , resources: @static_resource_directory("resources")
-  , css: ["resources/css.css"]
-  , page: start
-  }
+Server.start(
+  Server.http,
+  [ {resources: @static_resource_directory("resources")}
+  , {register: ["resources/css.css"]}
+  , {title: "Chat", page:start }
+  ]
 )

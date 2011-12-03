@@ -77,6 +77,4 @@ function start() {
  * embedding statically the contents of directory "resources", using the global stylesheet
  * "resources/css.css" and the user interface defined in [start].
  */
-Server.start(Server.http,
-  Server.simple({title: "Chat", page: start})
-)
+Server.start(Server.http, {title: "Chat", page: start })
