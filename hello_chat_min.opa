@@ -33,9 +33,9 @@ room = Network.network(message) (Network.cloud("room"))
  * @param x The message received from the chatroom
  */
 function user_update(message x) {
-  line = <div>{x.author}: {x.text}</div>
-  #conversation =+ line
-  Dom.scroll_to_bottom(#conversation)
+    line = <div>{x.author}: {x.text}</div>;
+    #conversation =+ line;
+    Dom.scroll_to_bottom(#conversation);
 }
 
 /**
@@ -46,10 +46,10 @@ function user_update(message x) {
  * @param author The name of the author. Will be included in the message broadcasted.
  */
 function broadcast(author) {
-  text = Dom.get_value(#entry)
-  message = {~author, ~text}
-  Network.broadcast(message, room)
-  Dom.clear_value(#entry)
+    text = Dom.get_value(#entry);
+    message = ~{author, text};
+    Network.broadcast(message, room);
+    Dom.clear_value(#entry);
 }
 
 /**
@@ -60,10 +60,10 @@ function broadcast(author) {
  * @return The user interface, ready to be sent by the server to the client on connection.
  */
 function start() {
-  author = Random.string(8)
+  author = Random.string(8);
   <div id=#conversation onready={function(_) { Network.add_callback(user_update, room) }} />
   <input id=#entry onnewline={function(_) { broadcast(author) }} />
-  <input type="button" onclick={function(_) { broadcast(author) }} value="Post" />
+  <input type="button" onclick={function(_) { broadcast(author) }} value="Post" />;
 }
 
 /**
@@ -77,4 +77,4 @@ function start() {
  * embedding statically the contents of directory "resources", using the global stylesheet
  * "resources/css.css" and the user interface defined in [start].
  */
-Server.start(Server.http, {title: "Chat", page: start })
+Server.start(Server.http, {title: "Chat", page: start });
