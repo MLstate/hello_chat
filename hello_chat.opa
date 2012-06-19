@@ -19,8 +19,7 @@ type message = { string author /**The name of the author (arbitrary string)*/
 /**
  * The chatroom.
  */
-// FIXME mixed directives; will need to be cleaned-up
-exposed @async room = Network.network(message) (Network.cloud("room"))
+exposed Network.network(message) room = Network.cloud("room")
 
 /**
  * {1 User interface}
@@ -100,8 +99,8 @@ function start() {
  */
 Server.start(
     Server.http,
-    [ {resources: @static_resource_directory("resources")}
-      , {register: {css:["resources/chat.css"]}}
-      , {title: "Chat", page:start }
+    [ { resources: @static_resource_directory("resources") }
+      , { register: { css: ["resources/chat.css"] } }
+      , { title: "Chat", page: start }
     ]
 );
