@@ -76,10 +76,13 @@ function start() {
     </>
     <div id=#conversation class="container"
       onready={function(_) { Network.add_callback(user_update, room) }}></>
-    <div id=#footer>
+    <div id=#footer class="navbar navbar-fixed-bottom">
       <div class="container">
-        <input id=#entry class="xlarge" onnewline={function(_) { broadcast(author) }} />
-        <div class="btn primary" onclick={function(_) { broadcast(author) }}>Post</>
+        <div class="input-append">
+          <input id="entry" class="input-xlarge" type="text"
+                 onnewline={function(_) { broadcast(author) }}>
+          <button class="btn btn-primary" type="button" onclick={function(_) { broadcast(author) }}>Post</button>
+        </>
       </>
     </>
 }
