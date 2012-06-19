@@ -75,6 +75,6 @@ function start() {
  *
  * Construct an application called "Chat" (users will see the name in the title bar),
  * embedding statically the contents of directory "resources", using the global stylesheet
- * "resources/css.css" and the user interface defined in [start].
+ * "resources/chat.css" and the user interface defined in [start].
  */
 Server.start(Server.http, {title: "Chat", page: start });
