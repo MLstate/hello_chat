@@ -67,8 +67,8 @@ function broadcast(author) {
  */
 function start() {
     author = Random.string(8);
-    <div class="topbar">
-      <div class="fill">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
           <div id=#logo />
         </>
