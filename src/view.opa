@@ -2,23 +2,23 @@ module View {
 
   function page_template(content) {
     <>
-      <div class="navbar navbar-fixed-top">
+      <div class="navbar navbar-inverse navbar-fixed-top">
         <div class=navbar-inner>
           <div class=container>
             <div id=#logo />
-          </>
-        </>
-      </>
+          </div>
+        </div>
+      </div>
       {content}
     </>
   }
 
   function user_update(message msg) {
-    line = <div class="row line">
-              <div class="span1 columns userpic" />
-              <div class="span2 columns user">{msg.author}:</>
-              <div class="span13 columns message">{msg.text}</>
-            </>;
+    line = <div class="row-fluid line">
+             <div class="span1 userpic" />
+             <div class="span2 user">{msg.author}:</>
+             <div class="span9 message">{msg.text}</>
+           </div>;
     #conversation =+ line;
     Dom.scroll_to_bottom(#conversation);
   }
@@ -35,7 +35,7 @@ module View {
     <footer class="navbar navbar-fixed-bottom">
       <div class=container>
         <div class=input-append>
-          <input id=#entry class=input-xlarge type=text
+          <input id=#entry class=input-xxlarge type=text
             onnewline={function(_) { broadcast(author) }}>
           <button class="btn btn-primary" type=button
             onclick={function(_) { broadcast(author) }}>Post</>

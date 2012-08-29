@@ -36,8 +36,12 @@
  font-weight: bold;
 }
 
-.message{
+.message {
  color:#666;
+}
+
+#entry {
+  margin-top: 6px;
 }
 
 footer {
